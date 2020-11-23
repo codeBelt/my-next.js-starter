@@ -1,13 +1,13 @@
 import React from 'react';
 import { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
-import { sampleUserData } from '../../utils/sample-data';
 import { Layout } from '../../components/shared/Layout';
 import { List } from '../../components/List';
 import { IUser } from '../../domains/users/users.constants';
+import { getUsers } from '../../domains/users/users.services';
 
 interface IProps {
-  items: IUser[];
+  users: IUser[];
 }
 
 const WithStaticProps: NextPage<IProps> = (props) => (
@@ -17,7 +17,7 @@ const WithStaticProps: NextPage<IProps> = (props) => (
       Example fetching data from inside <code>getStaticProps()</code>.
     </p>
     <p>You are currently on: /users</p>
-    <List users={props.items} />
+    <List users={props.users} />
     <p>
       <Link href="/">
         <a>Go home</a>
@@ -26,12 +26,10 @@ const WithStaticProps: NextPage<IProps> = (props) => (
   </Layout>
 );
 
-export const getStaticProps: GetStaticProps = async () => {
-  // Example for including static props in a Next.js function component page.
-  // Don't forget to include the respective types for any props passed into
-  // the component.
-  const items: IUser[] = sampleUserData;
-  return { props: { items } };
-};
-
 export default WithStaticProps;
+
+export const getStaticProps: GetStaticProps = async () => {
+  const users: IUser[] = await getUsers();
+
+  return { props: { users } };
+};

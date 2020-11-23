@@ -1,5 +1,4 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { sampleUserData } from '../../../utils/sample-data';
 import { IUser } from '../../../domains/users/users.constants';
 
 type IResponseData = {
@@ -7,5 +6,12 @@ type IResponseData = {
 };
 
 export default (req: NextApiRequest, res: NextApiResponse<IResponseData>) => {
+  const sampleUserData: IUser[] = [
+    { id: '101', name: 'Alice' },
+    { id: '102', name: 'Bob' },
+    { id: '103', name: 'Caroline' },
+    { id: '104', name: 'Dave' },
+  ];
+
   res.json({ users: sampleUserData });
 };

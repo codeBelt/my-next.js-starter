@@ -1,16 +1,17 @@
 import React from 'react';
 import { GetStaticProps, GetStaticPaths, NextPage } from 'next';
-import { sampleUserData } from '../../utils/sample-data';
 import { Layout } from '../../components/shared/Layout';
 import { ListDetail } from '../../components/ListDetail';
 import { IUser } from '../../domains/users/users.constants';
+import { getUsers } from '../../domains/users/users.services';
 
 interface IProps {
-  item?: IUser;
+  user?: IUser;
   errors?: string;
 }
 
 const StaticPropsDetail: NextPage<IProps> = (props) => {
+  console.log(`props`, props);
   if (props.errors) {
     return (
       <Layout title="Error | Next.js + TypeScript Example">
@@ -22,8 +23,8 @@ const StaticPropsDetail: NextPage<IProps> = (props) => {
   }
 
   return (
-    <Layout title={`${props.item ? props.item.name : 'User Detail'} | Next.js + TypeScript Example`}>
-      {props.item && <ListDetail user={props.item} />}
+    <Layout title={`${props.user ? props.user.name : 'User Detail'} | Next.js + TypeScript Example`}>
+      {props.user && <ListDetail user={props.user} />}
     </Layout>
   );
 };
@@ -31,8 +32,9 @@ const StaticPropsDetail: NextPage<IProps> = (props) => {
 export default StaticPropsDetail;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  // Get the paths we want to pre-render based on users
-  const paths = sampleUserData.map((user) => ({
+  const users = await getUsers();
+
+  const paths = users.map((user) => ({
     params: { id: user.id.toString() },
   }));
 
@@ -41,17 +43,17 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
-// This function gets called at build time on server-side.
-// It won't be called on client-side, so you can even do
-// direct database queries.
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
+    const users = await getUsers();
     const id = params?.id;
-    const item = sampleUserData.find((data) => data.id === Number(id));
-    // By returning { props: item }, the StaticPropsDetail component
-    // will receive `item` as a prop at build time
-    return { props: { item } };
+    const user = users.find((data) => data.id === id);
+
+    return { props: { user } };
   } catch (err) {
     return { props: { errors: err.message } };
   }
 };
+
+// function Blog({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
+// }

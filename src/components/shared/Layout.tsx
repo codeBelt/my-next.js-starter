@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
+import { Routes } from '../../constants/Routes';
 
 interface IProps {
   title?: string;
@@ -18,10 +19,10 @@ export const Layout: React.FC<IProps> = (props) => (
         <Link href="/">
           <a>Home</a>
         </Link>
-        <Link href="/about">
+        <Link href={Routes.About}>
           <a>About</a>
         </Link>
-        <Link href="/users">
+        <Link href={Routes.Users}>
           <a>Users List</a>
         </Link>
         | <a href="/api/users">Users API</a>
