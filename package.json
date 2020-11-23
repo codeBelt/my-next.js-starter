@@ -1,21 +1,37 @@
 {
-  "name": "with-typescript",
+  "name": "my-next.js-starter",
   "version": "1.0.0",
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged",
+      "post-commit": "git update-index -g"
+    }
+  },
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "type-check": "tsc"
+    "---------- Linting ----------------------------------------------------": "",
+    "prettier": "npx prettier --write \"./**/*.{ts,tsx,js,jsx,json,md}\"",
+    "---------- helper commands --------------------------------------------": "",
+    "serve": "http-server ./out",
+    "ts": "tsc --noEmit",
+    "ts:watch": "npm run ts -- --watch",
+    "-----------------------------------------------------------------------": ""
   },
   "dependencies": {
-    "next": "latest",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "next": "10.0.2",
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
   },
   "devDependencies": {
-    "@types/node": "^14.14.9",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
+    "@types/node": "14.14.9",
+    "@types/react": "17.0.0",
+    "@types/react-dom": "17.0.0",
+    "http-server": "0.12.3",
+    "husky": "4.3.0",
+    "prettier": "2.1.2",
+    "pretty-quick": "3.1.0",
     "typescript": "4.1.2"
   },
   "license": "MIT"
