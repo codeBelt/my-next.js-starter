@@ -13,5 +13,5 @@ export default (req: NextApiRequest, res: NextApiResponse<IResponseData>) => {
     { id: '104', name: 'Dave' },
   ];
 
-  res.json({ users: sampleUserData });
+  res.status(200).json({ users: sampleUserData });
 };
