@@ -1,13 +1,13 @@
 import React from 'react';
-import { IUser } from '../domains/users/users.constants';
+import { IFilm } from '../domains/films/films.constants';
 
 interface IProps {
-  user: IUser;
+  film: IFilm;
 }
 
 export const ListDetail: React.FC<IProps> = (props) => (
   <div>
-    <h1>Detail for {props.user.name}</h1>
-    <p>ID: {props.user.id}</p>
+    <h1>Title {props.film.title}</h1>
+    <p>ID: {props.film.episode_id}</p>
   </div>
 );

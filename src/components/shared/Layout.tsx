@@ -22,8 +22,8 @@ export const Layout: React.FC<IProps> = (props) => (
         <Link href={Routes.About}>
           <a>About</a>
         </Link>
-        <Link href={Routes.Users}>
-          <a>Users List</a>
+        <Link href={Routes.Films}>
+          <a>Film List</a>
         </Link>
         | <a href="/api/users">Users API</a>
       </nav>

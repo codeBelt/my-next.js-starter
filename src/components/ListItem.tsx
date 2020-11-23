@@ -1,15 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
-import { IUser } from '../domains/users/users.constants';
+import { IFilm } from '../domains/films/films.constants';
 
 interface IProps {
-  user: IUser;
+  film: IFilm;
 }
 
 export const ListItem: React.FC<IProps> = (props) => (
-  <Link href={`/users/${props.user.id}`}>
+  <Link href={`/films/${props.film.episode_id}`}>
     <a>
-      {props.user.id}: {props.user.name}
+      {props.film.episode_id}: {props.film.title}
     </a>
   </Link>
 );
