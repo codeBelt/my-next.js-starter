@@ -1,34 +1,24 @@
 import React from 'react';
 import { GetStaticProps, GetStaticPaths, NextPage } from 'next';
 import { Layout } from '../../components/shared/Layout';
-import { ListDetail } from '../../components/ListDetail';
 import { IFilm } from '../../domains/films/films.constants';
 import { getFilm, getFilms } from '../../domains/films/films.services';
+import { FilmPage } from '../../components/pages/film-page/FilmPage';
 
 interface IProps {
   film?: IFilm;
   errors?: string;
 }
 
-const StaticPropsDetail: NextPage<IProps> = (props) => {
-  if (props.errors) {
-    return (
-      <Layout title="Error | Next.js + TypeScript Example">
-        <p>
-          <span style={{ color: 'red' }}>Error:</span> {props.errors}
-        </p>
-      </Layout>
-    );
-  }
-
+const FilmRoute: NextPage<IProps> = (props) => {
   return (
     <Layout title={`${props.film ? props.film.title : 'Film Detail'} | Next.js + TypeScript Example`}>
-      {props.film && <ListDetail film={props.film} />}
+      <FilmPage film={props.film} errors={props.errors} />
     </Layout>
   );
 };
 
-export default StaticPropsDetail;
+export default FilmRoute;
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const films = await getFilms();
