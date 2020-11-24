@@ -1,7 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { IFilm } from '../../../domains/films/films.constants';
-import { List } from '../../List';
+import { List } from './list/List';
+import { Routes } from '../../../constants/Routes';
 
 interface IProps {
   films: IFilm[];
@@ -17,7 +18,7 @@ export const FilmPages: React.FC<IProps> = (props) => {
       <p>You are currently on: /films</p>
       <List films={props.films} />
       <p>
-        <Link href="/">
+        <Link href={Routes.Index}>
           <a>Go home</a>
         </Link>
       </p>

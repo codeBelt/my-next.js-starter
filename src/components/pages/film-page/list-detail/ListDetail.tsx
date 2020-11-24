@@ -1,5 +1,5 @@
 import React from 'react';
-import { IFilm } from '../domains/films/films.constants';
+import { IFilm } from '../../../../domains/films/films.constants';
 
 interface IProps {
   film: IFilm;

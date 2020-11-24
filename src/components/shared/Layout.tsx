@@ -1,7 +1,6 @@
 import React from 'react';
-import Link from 'next/link';
 import Head from 'next/head';
-import { Routes } from '../../constants/Routes';
+import { MainNav } from './main-nav/MainNav';
 
 interface IProps {
   title?: string;
@@ -16,18 +15,7 @@ export const Layout: React.FC<IProps> = (props) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <header>
-        <nav>
-          <Link href="/">
-            <a>Home</a>
-          </Link>
-          <Link href={Routes.About}>
-            <a>About</a>
-          </Link>
-          <Link href={Routes.Films}>
-            <a>Film List</a>
-          </Link>
-          | <a href="/api/users">Users API</a>
-        </nav>
+        <MainNav />
       </header>
       {props.children}
       <footer>

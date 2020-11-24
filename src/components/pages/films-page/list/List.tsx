@@ -1,6 +1,6 @@
 import React from 'react';
-import { ListItem } from './ListItem';
-import { IFilm } from '../domains/films/films.constants';
+import { ListItem } from './list-item/ListItem';
+import { IFilm } from '../../../../domains/films/films.constants';
 
 interface IProps {
   films: IFilm[];
