@@ -5,10 +5,12 @@ import { NextPage } from 'next';
 
 interface IProps {}
 
-const IndexRoute: NextPage<IProps> = (props) => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <IndexPage />
-  </Layout>
-);
+const IndexRoute: NextPage<IProps> = (props) => {
+  return (
+    <Layout title="Home | Next.js + TypeScript Example">
+      <IndexPage />
+    </Layout>
+  );
+};
 
 export default IndexRoute;

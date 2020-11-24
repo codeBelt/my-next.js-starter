@@ -4,13 +4,15 @@ import { Routes } from '../../constants/Routes';
 
 interface IProps {}
 
-export const IndexPage: React.FC<IProps> = (props) => (
-  <div>
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href={Routes.About}>
-        <a>About</a>
-      </Link>
-    </p>
-  </div>
-);
+export const IndexPage: React.FC<IProps> = (props) => {
+  return (
+    <div>
+      <h1>Hello Next.js 👋</h1>
+      <p>
+        <Link href={Routes.About}>
+          <a>About</a>
+        </Link>
+      </p>
+    </div>
+  );
+};
