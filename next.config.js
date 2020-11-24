@@ -12,10 +12,19 @@ module.exports = withPlugins(
     }),
   ],
   {
-    // Override the default .next build dir for GCloud leading period issue
     distDir: 'build',
 
-    webpack: (config) => {
+    async rewrites() {
+      return [];
+    },
+    async redirects() {
+      return [];
+    },
+    async headers() {
+      return [];
+    },
+
+    webpack(config) {
       const envMapper = {
         'parallax-dev': 'development',
         'parallax-staging': 'staging',
