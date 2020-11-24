@@ -24,13 +24,8 @@ module.exports = withPlugins(
       return [];
     },
 
-    webpack(config) {
-      const envMapper = {
-        'parallax-dev': 'development',
-        'parallax-staging': 'staging',
-        'parallax-alpha': 'production',
-      };
-      const clientEnv = envMapper[process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID] || 'production';
+    webpack: (config) => {
+      const clientEnv = process.env.CLIENT_ENV || 'production';
 
       // https://blog.usejournal.com/my-awesome-custom-react-environment-variables-setup-8ebb0797d8ac
       config.resolve.alias['environment'] = path.join(__dirname, 'src', 'environments', clientEnv);
