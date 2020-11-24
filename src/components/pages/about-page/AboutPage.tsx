@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Routes } from '../../constants/Routes';
+import { Routes } from '../../../constants/Routes';
 
 interface IProps {}
 

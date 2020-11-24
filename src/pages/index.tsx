@@ -1,6 +1,6 @@
 import React from 'react';
 import { Layout } from '../components/shared/Layout';
-import { IndexPage } from '../components/pages/IndexPage';
+import { IndexPage } from '../components/pages/index-page/IndexPage';
 import { NextPage } from 'next';
 
 interface IProps {}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Layout } from '../components/shared/Layout';
 import { NextPage } from 'next';
-import { AboutPage } from '../components/pages/AboutPage';
+import { AboutPage } from '../components/pages/about-page/AboutPage';
 
 interface IProps {}
 
