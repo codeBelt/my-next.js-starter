@@ -8,17 +8,18 @@
     }
   },
   "scripts": {
-    "dev": "next",
+    "dev": "CLIENT_ENV=development next",
     "build": "next build",
     "start": "next start",
     "---------- Linting ----------------------------------------------------": "",
-    "prettier": "npx prettier --write \"./**/*.{ts,tsx,js,jsx,json,md}\"",
+    "ts": "tsc --noEmit",
+    "ts:watch": "npm run ts -- --watch",
     "---------- Analyze ----------------------------------------------------": "",
     "analyze": "ANALYZE=true next build",
     "---------- helper commands --------------------------------------------": "",
     "serve": "http-server ./out",
-    "ts": "tsc --noEmit",
-    "ts:watch": "npm run ts -- --watch",
+    "generate": "node ./tools/generate.js",
+    "prettier": "npx prettier --write \"./**/*.{ts,tsx,js,jsx,json,md}\"",
     "-----------------------------------------------------------------------": ""
   },
   "dependencies": {
@@ -32,6 +33,7 @@
     "@types/node": "14.14.9",
     "@types/react": "17.0.0",
     "@types/react-dom": "17.0.0",
+    "generate-template-files": "3.0.0",
     "http-server": "0.12.3",
     "husky": "4.3.0",
     "next-compose-plugins": "2.2.1",
