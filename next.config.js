@@ -14,16 +14,6 @@ module.exports = withPlugins(
   {
     distDir: 'build',
 
-    async rewrites() {
-      return [];
-    },
-    async redirects() {
-      return [];
-    },
-    async headers() {
-      return [];
-    },
-
     webpack: (config) => {
       const clientEnv = process.env.CLIENT_ENV || 'production';
 
