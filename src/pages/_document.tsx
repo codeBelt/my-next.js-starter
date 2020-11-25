@@ -15,6 +15,7 @@ class MyDocument extends Document {
           <meta charSet="UTF-8" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet" />
+          <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-base.min.js" type="text/javascript" />
         </Head>
         <body>
           <Main />
