@@ -1,6 +1,7 @@
 *.d.ts
 .DS_Store
 .editorconfig
+.generated
 .git
 .github
 .gitignore
@@ -17,5 +18,5 @@ build
 dist
 lib
 node_modules
-package.json
 out
+package.json
