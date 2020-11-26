@@ -28,9 +28,6 @@
         "We actually don't use this library. The only reason anychart is installed is for the TypeScript types.",
         "The actual code is downloaded via a script tag in the _document.tsx file. Make sure the versions are the same in the script tag and in dependencies.",
         "If you look at the next.config.js file you will notice that webpack removes anychart from being bundle into the JavaScript files. This prevents anychart from being bundled multiple times."
-      ],
-      "anychart-react": [
-        "The anychart-react library installs the latest anychart library so we need to specificlly install the correct version of anychart."
       ]
     }
   ],
