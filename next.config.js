@@ -14,7 +14,7 @@ module.exports = withPlugins(
   {
     distDir: 'build',
 
-    webpack: (config) => {
+    webpack(config) {
       const clientEnv = process.env.CLIENT_ENV || 'production';
 
       // https://blog.usejournal.com/my-awesome-custom-react-environment-variables-setup-8ebb0797d8ac
