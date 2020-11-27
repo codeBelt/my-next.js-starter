@@ -1,6 +1,6 @@
 import React from 'react';
 import { getChart } from './SimpleBarChart.utils';
-import AnyChart from 'anychart-react';
+import AnyChartReact from 'anychart-react';
 
 interface IProps {
   chartId: string;
@@ -14,7 +14,7 @@ export const SimpleBarChart: React.FC<IProps> = (props) => {
   const chart = getChart();
 
   return (
-    <AnyChart
+    <AnyChartReact
       charts={chart.data}
       credits={false}
       instance={chart.stage}

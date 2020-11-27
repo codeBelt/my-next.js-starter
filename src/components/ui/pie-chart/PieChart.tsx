@@ -1,5 +1,5 @@
 import React from 'react';
-import AnyChart from 'anychart-react';
+import AnyChartReact from 'anychart-react';
 
 interface IProps {
   chartId: string;
@@ -11,7 +11,7 @@ interface IProps {
 
 export const PieChart: React.FC<IProps> = (props) => {
   return (
-    <AnyChart
+    <AnyChartReact
       type="pie"
       data={props.data}
       title={props.title}
