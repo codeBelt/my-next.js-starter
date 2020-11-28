@@ -20,12 +20,7 @@ module.exports = withPlugins(
       // https://blog.usejournal.com/my-awesome-custom-react-environment-variables-setup-8ebb0797d8ac
       config.resolve.alias['environment'] = path.join(__dirname, 'src', 'environments', clientEnv);
 
-      config.externals = [
-        ...config.externals,
-        {
-          anychart: 'anychart',
-        },
-      ];
+      config.externals = [...config.externals, { anychart: 'anychart' }];
 
       return config;
     },
