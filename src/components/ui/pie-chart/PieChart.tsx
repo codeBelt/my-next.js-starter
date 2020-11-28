@@ -3,7 +3,7 @@ import AnyChartReact from 'anychart-react';
 
 interface IProps {
   chartId: string;
-  data: number[];
+  data: any[][];
   height?: number | string;
   title: string;
   width?: number | string;

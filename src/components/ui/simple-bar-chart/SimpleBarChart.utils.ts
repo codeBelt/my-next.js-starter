@@ -1,6 +1,4 @@
-export const getChart = () => {
-  const stage = anychart.graphics.create();
-
+export const generateSimpleBarChart = () => {
   const chart1 = anychart.line([1, 2, 3]);
 
   chart1.bounds(0, 0, '100%', '50%');
@@ -11,5 +9,8 @@ export const getChart = () => {
   chart2.line([3, 5, 6]);
   chart2.bounds(0, '50%', '100%', '50%');
 
-  return { stage, data: [chart1, chart2] };
+  return {
+    charts: [chart1, chart2],
+    stage: anychart.graphics.create(),
+  };
 };

@@ -10,6 +10,7 @@
   "scripts": {
     "dev": "CLIENT_ENV=development next",
     "build": "next build",
+    "prestart": "next build",
     "start": "next start",
     "---------- Linting ----------------------------------------------------": "",
     "ts": "tsc --noEmit",

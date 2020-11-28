@@ -1,17 +1,19 @@
 import React, { useMemo } from 'react';
-import { generateSimpleBarChart } from './SimpleBarChart.utils';
 import AnyChartReact from 'anychart-react';
+import { generateAreaChart } from './AreaChart.utils';
+
+interface IProps {}
 
 interface IProps {
   chartId: string;
-  // data: number[];
+  data: any[];
   height?: number | string;
   title: string;
   width?: number | string;
 }
 
-export const SimpleBarChart: React.FC<IProps> = (props) => {
-  const chartData = useMemo(() => generateSimpleBarChart(), []);
+export const AreaChart: React.FC<IProps> = (props) => {
+  const chartData = useMemo(() => generateAreaChart(props.data, props.title), [props.data, props.title]);
 
   return (
     <AnyChartReact
@@ -26,3 +28,5 @@ export const SimpleBarChart: React.FC<IProps> = (props) => {
     />
   );
 };
+
+AreaChart.defaultProps = {};
