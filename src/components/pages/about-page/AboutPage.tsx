@@ -2,7 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 import { Routes } from '../../../constants/Routes';
 import { PieChartDynamic } from '../../ui/pie-chart/PieChart.dynamic';
-import { SimpleBarChartDynamic } from '../../ui/simple-bar-chart/SimpleBarChart.dynamic';
 import { AreaChartDynamic } from '../../ui/area-chart/AreaChart.dynamic';
 
 interface IProps {}
