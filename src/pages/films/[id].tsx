@@ -26,7 +26,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
     params: { id: film.episode_id.toString() },
   }));
 
-  // { fallback: false } means other routes should 404.
   return { paths, fallback: false };
 };
 
