@@ -3,7 +3,7 @@ import { Layout } from '../components/shared/Layout';
 import { NextPage } from 'next';
 import { AboutPage } from '../components/pages/about-page/AboutPage';
 import Head from 'next/head';
-import { AnyChart } from '../modules/any-chart/AnyChart';
+import { AnyChartScript } from '../modules/any-chart/AnyChartScript';
 
 interface IProps {}
 
@@ -11,7 +11,7 @@ const AboutRoute: NextPage<IProps> = (props) => {
   return (
     <>
       <Head>
-        <AnyChart />
+        <AnyChartScript />
       </Head>
       <Layout title="About">
         <AboutPage />

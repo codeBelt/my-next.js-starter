@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import AnyChartReact from 'anychart-react';
+import AnyChart from 'anychart-react';
 import { generateAreaChart } from './AreaChart.utils';
 
 interface IProps {}
@@ -16,7 +16,7 @@ export const AreaChart: React.FC<IProps> = (props) => {
   const chartData = useMemo(() => generateAreaChart(props.data, props.title), [props.data, props.title]);
 
   return (
-    <AnyChartReact
+    <AnyChart
       charts={chartData.charts}
       credits={false}
       instance={chartData.stage}

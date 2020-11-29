@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { generateSimpleBarChart } from './SimpleBarChart.utils';
-import AnyChartReact from 'anychart-react';
+import AnyChart from 'anychart-react';
 
 interface IProps {
   chartId: string;
@@ -14,7 +14,7 @@ export const SimpleBarChart: React.FC<IProps> = (props) => {
   const chartData = useMemo(() => generateSimpleBarChart(), []);
 
   return (
-    <AnyChartReact
+    <AnyChart
       charts={chartData.charts}
       credits={false}
       instance={chartData.stage}
