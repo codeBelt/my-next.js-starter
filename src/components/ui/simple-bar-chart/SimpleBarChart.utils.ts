@@ -1,4 +1,4 @@
-import anychart from 'anychart';
+import 'anychart';
 
 export const generateSimpleBarChart = () => {
   const chart1 = anychart.line([1, 2, 3]);

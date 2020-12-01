@@ -1,4 +1,4 @@
-import anychart from 'anychart';
+import 'anychart';
 
 export const generateAreaChart = (data: any[], title: string) => {
   const chart = anychart.area();
