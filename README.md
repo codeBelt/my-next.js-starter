@@ -1,8 +1,12 @@
 # my-next.js-starter
 
-`npx create-next-app --example with-typescript my-next.js-starter`
+## Example Branches
+
+- [AnyChart.js](https://github.com/codeBelt/my-next.js-starter/tree/anychart)
 
 # TypeScript Next.js example
+
+`npx create-next-app --example with-typescript my-next.js-starter`
 
 This is a really simple project that shows the usage of Next.js with TypeScript.
 
