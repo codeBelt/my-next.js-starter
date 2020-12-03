@@ -16,6 +16,8 @@ module.exports = withPlugins(
     distDir: 'build',
 
     webpack(config) {
+      config.externals = [...config.externals, { anychart: 'anychart' }];
+
       config.resolve.alias = {
         ...config.resolve.alias,
         // https://blog.usejournal.com/my-awesome-custom-react-environment-variables-setup-8ebb0797d8ac
@@ -27,8 +29,6 @@ module.exports = withPlugins(
 
         process.env.NODE_ENV === 'production' ? new DuplicatePackageCheckerPlugin() : null,
       ].filter(Boolean);
-
-      config.externals = [...config.externals, { anychart: 'anychart' }];
 
       return config;
     },
