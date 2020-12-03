@@ -1,10 +1,5 @@
-// https://www.robertcooper.me/using-eslint-and-prettier-in-a-typescript-project
 // https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin/docs/rules
-// https://www.sitepoint.com/react-with-typescript-best-practices/
-
-// https://medium.com/better-programming/how-to-use-eslint-and-prettier-in-your-next-js-application-with-typescript-8ffc9ac5b672
 // https://dev.to/onygami/eslint-and-prettier-for-react-apps-bonus-next-js-and-typescript-3e46
-// https://paulintrognon.fr/blog/typescript-prettier-eslint-next-js
 
 module.exports = {
   root: true,
