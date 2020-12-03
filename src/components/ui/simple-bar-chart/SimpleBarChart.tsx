@@ -4,7 +4,6 @@ import AnyChart from 'anychart-react';
 
 interface IProps {
   chartId: string;
-  // data: number[];
   height?: number | string;
   title: string;
   width?: number | string;

@@ -2,8 +2,6 @@ import React, { useMemo } from 'react';
 import AnyChart from 'anychart-react';
 import { generateAreaChart } from './AreaChart.utils';
 
-interface IProps {}
-
 interface IProps {
   chartId: string;
   data: any[];
