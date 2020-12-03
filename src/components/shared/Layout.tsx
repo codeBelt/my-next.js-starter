@@ -20,7 +20,7 @@ export const Layout: React.FC<IProps> = (props) => {
       {props.children}
       <footer>
         <hr />
-        <span>I'm here to stay (Footer)</span>
+        <span>I&#39;m here to stay (Footer)</span>
       </footer>
     </div>
   );
