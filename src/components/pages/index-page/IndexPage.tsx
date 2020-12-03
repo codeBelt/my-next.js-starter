@@ -7,7 +7,12 @@ interface IProps {}
 export const IndexPage: React.FC<IProps> = (props) => {
   return (
     <div>
-      <h1>Hello Next.js 👋</h1>
+      <h1>
+        Hello Next.js{' '}
+        <span role="img" aria-label="hand waving">
+          👋
+        </span>
+      </h1>
       <p>
         <Link href={Routes.About}>
           <a>About</a>
