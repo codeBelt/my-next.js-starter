@@ -46,5 +46,6 @@ module.exports = {
         aspects: ['invalidHref', 'preferButton'],
       },
     ],
+    'jsx-a11y/no-onchange': 'off', // ⚠️ Deprecated: This rule is based on reports of behavior of old browsers (eg. IE 10 and below)
   },
 };
