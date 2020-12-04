@@ -6,7 +6,7 @@ import { UiSelect } from '../../ui/ui-select/UiSelect';
 interface IProps {}
 
 export const IndexPage: React.FC<IProps> = (props) => {
-  const [controlledValue, setControlledValue] = useState<string>('2');
+  const [controlledValue, setControlledValue] = useState<string>('3');
 
   return (
     <div>
