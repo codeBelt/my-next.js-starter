@@ -6,7 +6,7 @@ import environment from 'environment';
 
 interface IProps {}
 
-export const MainNav: React.FC<IProps> = (props) => {
+export const MainNavigation: React.FC<IProps> = (props) => {
   return (
     <nav>
       <ol className={styles.crumb}>

@@ -1,12 +1,12 @@
 import React from 'react';
 import Head from 'next/head';
-import { MainNav } from './main-nav/MainNav';
+import { MainNavigation } from '../main-navigation/MainNavigation';
 
 interface IProps {
   title?: string;
 }
 
-export const Layout: React.FC<IProps> = (props) => {
+export const MainLayout: React.FC<IProps> = (props) => {
   return (
     <div>
       <Head>
@@ -15,7 +15,7 @@ export const Layout: React.FC<IProps> = (props) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <header>
-        <MainNav />
+        <MainNavigation />
       </header>
       {props.children}
       <footer>
@@ -26,6 +26,6 @@ export const Layout: React.FC<IProps> = (props) => {
   );
 };
 
-Layout.defaultProps = {
+MainLayout.defaultProps = {
   title: 'This is the default title',
 };
