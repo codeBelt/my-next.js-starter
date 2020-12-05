@@ -3,6 +3,7 @@
 ## Example Branches
 
 - [AnyChart.js](https://github.com/codeBelt/my-next.js-starter/tree/anychart) - [Diff](https://github.com/codeBelt/my-next.js-starter/pull/1/files)
+- [Material UI](https://github.com/codeBelt/my-next.js-starter/tree/material-ui) - [Diff](https://github.com/codeBelt/my-next.js-starter/pull/4/files)
 
 # TypeScript Next.js example
 
