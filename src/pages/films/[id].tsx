@@ -1,6 +1,6 @@
 import React from 'react';
 import { GetStaticProps, GetStaticPaths, NextPage } from 'next';
-import { Layout } from '../../components/shared/Layout';
+import { MainLayout } from '../../components/shared/main-layout/MainLayout';
 import { IFilm } from '../../domains/films/films.constants';
 import { getFilm, getFilms } from '../../domains/films/films.services';
 import { FilmPage } from '../../components/pages/film-page/FilmPage';
@@ -12,9 +12,9 @@ interface IProps {
 
 const FilmRoute: NextPage<IProps> = (props) => {
   return (
-    <Layout title={`${props.film ? props.film.title : 'Film Detail'} | Next.js + TypeScript Example`}>
+    <MainLayout title={`${props.film ? props.film.title : 'Film Detail'} | Next.js + TypeScript Example`}>
       <FilmPage film={props.film} errors={props.errors} />
-    </Layout>
+    </MainLayout>
   );
 };
 

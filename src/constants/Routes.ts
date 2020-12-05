@@ -7,4 +7,5 @@ export enum Routes {
   About = '/about',
   Films = '/films',
   Films_FilmId = '/films/[film_id]',
+  Dashboard = '/dashboard',
 }

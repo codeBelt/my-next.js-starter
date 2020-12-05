@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout } from '../../components/shared/Layout';
+import { MainLayout } from '../../components/shared/main-layout/MainLayout';
 import { NextPage } from 'next';
 import { AboutPage } from '../../components/pages/about-page/AboutPage';
 
@@ -7,9 +7,9 @@ interface IProps {}
 
 const AboutRoute: NextPage<IProps> = (props) => {
   return (
-    <Layout title="About">
+    <MainLayout title="About">
       <AboutPage />
-    </Layout>
+    </MainLayout>
   );
 };
 
