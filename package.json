@@ -40,6 +40,7 @@
     "anychart": "8.9.0",
     "anychart-react": "1.4.1",
     "axios": "0.21.0",
+    "clsx": "1.1.1",
     "next": "10.0.3",
     "react": "17.0.1",
     "react-dom": "17.0.1"

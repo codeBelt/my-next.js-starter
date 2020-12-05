@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout } from '../components/shared/Layout';
+import { MainLayout } from '../components/shared/main-layout/MainLayout';
 import { IndexPage } from '../components/pages/index-page/IndexPage';
 import { NextPage } from 'next';
 import Head from 'next/head';
@@ -13,9 +13,9 @@ const IndexRoute: NextPage<IProps> = (props) => {
       <Head>
         <AnyChartScript />
       </Head>
-      <Layout title="Home | Next.js + TypeScript Example">
+      <MainLayout title="Home | Next.js + TypeScript Example">
         <IndexPage />
-      </Layout>
+      </MainLayout>
     </>
   );
 };
