@@ -1,8 +1,8 @@
-import { createStyles, makeStyles } from '@material-ui/core/styles';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 
 const drawerWidth = 240;
 
-export const useMainLayoutStyles = makeStyles((theme) =>
+export const useMainLayoutStyles = makeStyles<Theme>((theme) =>
   createStyles({
     root: {
       display: 'flex',
@@ -15,7 +15,7 @@ export const useMainLayoutStyles = makeStyles((theme) =>
       alignItems: 'center',
       justifyContent: 'flex-end',
       padding: '0 8px',
-      ...theme.mixins.toolbar,
+      ...(theme.mixins.toolbar as any),
     },
     appBar: {
       zIndex: theme.zIndex.drawer + 1,
