@@ -13,8 +13,6 @@ module.exports = withPlugins(
     }),
   ],
   {
-    distDir: 'build',
-
     webpack(config) {
       config.externals = [...config.externals, { anychart: 'anychart' }];
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Routes } from '../../../constants/Routes';
-import styles from './MainNav.module.css';
+import styles from './MainNavigation.module.css';
 import environment from 'environment';
 
 interface IProps {}
