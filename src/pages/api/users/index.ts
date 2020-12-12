@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-type IResponseData = {
+interface IResponseData {
   users: any[];
-};
+}
 
 export default (req: NextApiRequest, res: NextApiResponse<IResponseData>) => {
   const sampleUserData = [
