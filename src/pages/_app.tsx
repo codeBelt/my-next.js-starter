@@ -1,10 +1,27 @@
 import '../css/main.css';
 
-import React from 'react';
+import React, { useCallback } from 'react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
+import { usePageVisibility } from '../hooks/usePageVisibility';
 
 const NextApp: React.FC<AppProps> = (props) => {
+  const onVisibilityHandler = useCallback((isPageHidden) => {
+    console.log(`Is tab hidden: ${isPageHidden}`);
+  }, []);
+
+  const isHidden = usePageVisibility(onVisibilityHandler);
+
+  console.log(`isHidden (Causes Re-Renders)`, isHidden);
+
+  // useEffect(() => {
+  //   const visibilityChange = getVisibilityChangeEvent();
+  //
+  //   document.addEventListener(visibilityChange, onVisibilityHandler, false);
+  //
+  //   return () => document.removeEventListener(visibilityChange, onVisibilityHandler);
+  // }, [onVisibilityHandler]);
+
   return (
     <React.Fragment>
       <Head>
