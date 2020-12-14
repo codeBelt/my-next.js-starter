@@ -1,29 +1,33 @@
-export const getVisibilityChangeEvent = (): string => {
-  if (typeof document['msHidden'] !== 'undefined') {
-    return 'msvisibilitychange';
-  } else if (typeof document['webkitHidden'] !== 'undefined') {
-    return 'webkitvisibilitychange';
-  }
-
-  // Opera 12.10 and Firefox 18 and later support
-  return 'visibilitychange';
+let hiddenProp: string;
+const visibilityMap = {
+  hidden: 'visibilitychange', // Opera 12.10 and Firefox 18 and later support
+  mozHidden: 'mozvisibilitychange',
+  msHidden: 'msvisibilitychange',
+  webkitHidden: 'webkitvisibilitychange',
 };
 
 export const getDocumentHiddenProp = (): string => {
-  if (typeof document['msHidden'] !== 'undefined') {
-    return 'msHidden';
-  } else if (typeof document['webkitHidden'] !== 'undefined') {
-    return 'webkitHidden';
+  if (hiddenProp) {
+    return hiddenProp;
   }
 
-  // Opera 12.10 and Firefox 18 and later support
-  return 'hidden';
+  const supportedHiddenProp = Object.keys(visibilityMap).find((key) => typeof document[key] !== 'undefined');
+
+  hiddenProp = supportedHiddenProp || 'hidden';
+
+  return hiddenProp;
+};
+
+export const getVisibilityChangeEvent = (): string => {
+  const hidden = getDocumentHiddenProp();
+
+  return visibilityMap[hidden];
 };
 
 export const getIsDocumentHidden = (): boolean => {
   const hidden = getDocumentHiddenProp();
 
-  // If a browser doesn't support the hidden prop.
+  // If the browser doesn't support the hidden prop.
   // We still want to return a boolean (false) if "document[hidden]" is undefined.
   return Boolean(document[hidden]);
 };
