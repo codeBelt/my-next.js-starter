@@ -1,10 +1,20 @@
 import React from 'react';
 import Link from 'next/link';
 import { Routes } from '../../../constants/Routes';
+import { UiFileInputButton } from '../../ui/ui-file-input-button/UiFileInputButton';
+import { generateUploadProgressPercentage, uploadFileRequest } from '../../../domains/upload/upload.services';
 
 interface IProps {}
 
 export const IndexPage: React.FC<IProps> = (props) => {
+  const onChange = async (formData: FormData) => {
+    const response = await uploadFileRequest(formData, (event) => {
+      console.log(`progress`, generateUploadProgressPercentage(event));
+    });
+
+    console.log('response', response);
+  };
+
   return (
     <div>
       <h1>
@@ -13,6 +23,9 @@ export const IndexPage: React.FC<IProps> = (props) => {
           👋
         </span>
       </h1>
+      <div>
+        <UiFileInputButton label="Upload File" uploadFileName="theFile" onChange={onChange} acceptedFileTypes="" />
+      </div>
       <p>
         <Link href={Routes.About}>
           <a>About</a>
