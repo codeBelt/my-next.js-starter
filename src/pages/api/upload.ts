@@ -2,33 +2,43 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import nextConnect from 'next-connect';
 import multer from 'multer';
 import fs from 'fs';
-import path from 'path';
+import { ApiResponse } from '../../models/ApiResponse';
 
-interface IResponseData {
-  data: string[];
-}
 interface NextConnectApiRequest extends NextApiRequest {
   file: Express.Multer.File;
 }
+type ResponseData = ApiResponse<string[], string>;
 
-const outputFolderName = 'uploads';
-const apiRoute = nextConnect();
+const oneMegabyteInBytes = 1000000;
+const outputFolderName = './public/uploads';
 
-// const oneMegabyteInBytes = 1000000;
+const apiRoute = nextConnect({
+  onError(error, req: NextConnectApiRequest, res: NextApiResponse<ResponseData>) {
+    res.status(501).json({ error: `Sorry something Happened! ${error.message}` });
+  },
+  onNoMatch(req: NextConnectApiRequest, res: NextApiResponse<ResponseData>) {
+    res.status(405).json({ error: `Method '${req.method}' Not Allowed` });
+  },
+});
+
 const upload = multer({
-  // limits: { fileSize: oneMegabyteInBytes * 2 },
+  limits: { fileSize: oneMegabyteInBytes * 2 },
   storage: multer.diskStorage({
-    destination: `./public/${outputFolderName}`,
+    destination: outputFolderName,
     filename: (req, file, cb) => cb(null, file.originalname),
   }),
+  fileFilter: (req, file, cb) => {
+    const acceptFile: boolean = ['image/jpeg', 'image/png'].includes(file.mimetype);
+
+    cb(null, acceptFile);
+  },
 });
 
 apiRoute.use(upload.single('theFile'));
 
-apiRoute.post(async (req: NextConnectApiRequest, res: NextApiResponse<IResponseData>) => {
-  const dir = path.resolve(`./public/${outputFolderName}`);
-  const filenames = fs.readdirSync(dir);
-  const images = filenames.map((name) => `/${outputFolderName}/${name}`);
+apiRoute.post((req: NextConnectApiRequest, res: NextApiResponse<ResponseData>) => {
+  const filenames = fs.readdirSync(outputFolderName);
+  const images = filenames.map((name) => name);
 
   res.status(200).json({ data: images });
 });

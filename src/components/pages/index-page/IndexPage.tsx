@@ -2,14 +2,14 @@ import React from 'react';
 import Link from 'next/link';
 import { Routes } from '../../../constants/Routes';
 import { UiFileInputButton } from '../../ui/ui-file-input-button/UiFileInputButton';
-import { generateUploadProgressPercentage, uploadFileRequest } from '../../../domains/upload/upload.services';
+import { uploadFileRequest } from '../../../domains/upload/upload.services';
 
 interface IProps {}
 
 export const IndexPage: React.FC<IProps> = (props) => {
   const onChange = async (formData: FormData) => {
     const response = await uploadFileRequest(formData, (event) => {
-      console.log(`progress`, generateUploadProgressPercentage(event));
+      console.log(`Current progress:`, Math.round((event.loaded * 100) / event.total));
     });
 
     console.log('response', response);

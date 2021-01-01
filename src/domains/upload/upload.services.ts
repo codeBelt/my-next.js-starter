@@ -8,12 +8,9 @@ export const uploadFileRequest = async (
   const config: AxiosRequestConfig = {
     headers: { 'content-type': 'multipart/form-data' },
     onUploadProgress: progressCallback,
+    validateStatus: (status) => true,
   };
   const response = await axios.post('/api/upload', request, config);
 
   return response.data;
-};
-
-export const generateUploadProgressPercentage = (event: ProgressEvent): number => {
-  return Math.round((event.loaded * 100) / event.total);
 };
