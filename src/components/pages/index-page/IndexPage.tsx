@@ -24,7 +24,13 @@ export const IndexPage: React.FC<IProps> = (props) => {
         </span>
       </h1>
       <div>
-        <UiFileInputButton label="Upload File" uploadFileName="theFile" onChange={onChange} acceptedFileTypes="" />
+        <UiFileInputButton label="Upload Single File" uploadFileName="theFile" onChange={onChange} />
+        <UiFileInputButton
+          label="Upload Multiple Files"
+          uploadFileName="theFile"
+          onChange={onChange}
+          allowMultipleFiles={true}
+        />
       </div>
       <p>
         <Link href={Routes.About}>

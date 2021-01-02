@@ -9,7 +9,7 @@ export interface IProps {
    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#accept
    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#Unique_file_type_specifiers
    */
-  acceptedFileTypes: string;
+  acceptedFileTypes?: string;
   /**
    * When allowMultipleFiles is true, the file input allows the user to select more than one file.
    *
@@ -44,10 +44,15 @@ export const UiFileInputButton: React.FC<IProps> = (props) => {
   const { onChange } = props;
   const onChangeHandler = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
-      const formData = new FormData();
-      const file = event.target.files![0];
+      if (!event.target.files?.length) {
+        return;
+      }
 
-      formData.append(event.target.name, file);
+      const formData = new FormData();
+
+      Array.from(event.target.files).forEach((file) => {
+        formData.append(event.target.name, file);
+      });
 
       onChange(formData);
     },
@@ -59,6 +64,7 @@ export const UiFileInputButton: React.FC<IProps> = (props) => {
       <button onClick={onClickHandler}>{props.label}</button>
       <input
         accept={props.acceptedFileTypes}
+        multiple={props.allowMultipleFiles}
         name={props.uploadFileName}
         onChange={onChangeHandler}
         ref={fileInputRef}
@@ -70,6 +76,7 @@ export const UiFileInputButton: React.FC<IProps> = (props) => {
 };
 
 UiFileInputButton.defaultProps = {
+  acceptedFileTypes: '',
   allowMultipleFiles: false,
   onChange: noop,
 };
