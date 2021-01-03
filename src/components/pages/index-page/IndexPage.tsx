@@ -24,10 +24,10 @@ export const IndexPage: React.FC<IProps> = (props) => {
         </span>
       </h1>
       <div>
-        <UiFileInputButton label="Upload Single File" uploadFileName="theFile" onChange={onChange} />
+        <UiFileInputButton label="Upload Single File" uploadFileName="theFiles" onChange={onChange} />
         <UiFileInputButton
           label="Upload Multiple Files"
-          uploadFileName="theFile"
+          uploadFileName="theFiles"
           onChange={onChange}
           allowMultipleFiles={true}
         />
