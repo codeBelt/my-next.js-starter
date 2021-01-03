@@ -2,7 +2,7 @@ import axios, { AxiosRequestConfig } from 'axios';
 import { ApiResponse } from '../../models/ApiResponse';
 
 export const uploadFileRequest = async (
-  request: FormData,
+  formData: FormData,
   progressCallback?: (progressEvent: ProgressEvent) => void
 ): Promise<ApiResponse<string[]>> => {
   const config: AxiosRequestConfig = {
@@ -10,7 +10,7 @@ export const uploadFileRequest = async (
     onUploadProgress: progressCallback,
     validateStatus: (status) => true,
   };
-  const response = await axios.post('/api/upload', request, config);
+  const response = await axios.post('/api/uploads', formData, config);
 
   return response.data;
 };

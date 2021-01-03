@@ -1,5 +1,4 @@
-import React, { useCallback } from 'react';
-import { noop } from '../../../utils/misc.utils';
+import React from 'react';
 
 export interface IProps {
   /**
@@ -37,27 +36,23 @@ export interface IProps {
 export const UiFileInputButton: React.FC<IProps> = (props) => {
   const fileInputRef = React.useRef<HTMLInputElement | null>(null);
 
-  const onClickHandler = useCallback(() => {
+  const onClickHandler = () => {
     fileInputRef.current?.click();
-  }, [fileInputRef]);
+  };
 
-  const { onChange } = props;
-  const onChangeHandler = useCallback(
-    (event: React.ChangeEvent<HTMLInputElement>) => {
-      if (!event.target.files?.length) {
-        return;
-      }
+  const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (!event.target.files?.length) {
+      return;
+    }
 
-      const formData = new FormData();
+    const formData = new FormData();
 
-      Array.from(event.target.files).forEach((file) => {
-        formData.append(event.target.name, file);
-      });
+    Array.from(event.target.files).forEach((file) => {
+      formData.append(event.target.name, file);
+    });
 
-      onChange(formData);
-    },
-    [onChange]
-  );
+    props.onChange(formData);
+  };
 
   return (
     <>
@@ -78,5 +73,4 @@ export const UiFileInputButton: React.FC<IProps> = (props) => {
 UiFileInputButton.defaultProps = {
   acceptedFileTypes: '',
   allowMultipleFiles: false,
-  onChange: noop,
 };

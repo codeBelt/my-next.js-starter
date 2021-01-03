@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import nextConnect from 'next-connect';
 import multer from 'multer';
 import fs from 'fs';
-import { ApiResponse } from '../../models/ApiResponse';
+import { ApiResponse } from '../../../models/ApiResponse';
 
 interface NextConnectApiRequest extends NextApiRequest {
   file: Express.Multer.File;
