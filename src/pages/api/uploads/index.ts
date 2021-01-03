@@ -5,7 +5,7 @@ import fs from 'fs';
 import { ApiResponse } from '../../../models/ApiResponse';
 
 interface NextConnectApiRequest extends NextApiRequest {
-  file: Express.Multer.File;
+  files: Express.Multer.File[];
 }
 type ResponseData = ApiResponse<string[], string>;
 
