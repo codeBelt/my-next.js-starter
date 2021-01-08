@@ -35,6 +35,7 @@ export interface IProps {
 
 export const UiFileInputButton: React.FC<IProps> = (props) => {
   const fileInputRef = React.useRef<HTMLInputElement | null>(null);
+  const formRef = React.useRef<HTMLFormElement | null>(null);
 
   const onClickHandler = () => {
     fileInputRef.current?.click();
@@ -52,11 +53,15 @@ export const UiFileInputButton: React.FC<IProps> = (props) => {
     });
 
     props.onChange(formData);
+
+    formRef.current?.reset();
   };
 
   return (
-    <>
-      <button onClick={onClickHandler}>{props.label}</button>
+    <form ref={formRef}>
+      <button type="button" onClick={onClickHandler}>
+        {props.label}
+      </button>
       <input
         accept={props.acceptedFileTypes}
         multiple={props.allowMultipleFiles}
@@ -66,7 +71,7 @@ export const UiFileInputButton: React.FC<IProps> = (props) => {
         style={{ display: 'none' }}
         type="file"
       />
-    </>
+    </form>
   );
 };
 
