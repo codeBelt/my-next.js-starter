@@ -32,11 +32,14 @@ module.exports = {
     'plugin:prettier/recommended', // Make sure this is always the last element in the array.
   ],
   rules: {
-    '@typescript-eslint/no-empty-interface': 0,
-    'prettier/prettier': ['error', {}, { usePrettierrc: true }],
-    'react/react-in-jsx-scope': 'off',
-    'react/prop-types': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-empty-interface': 0,
+    '@typescript-eslint/no-unused-vars': ['error', { args: 'none' }],
+    'newline-after-var': ['error', 'always'],
+    'prettier/prettier': ['error', {}, { usePrettierrc: true }],
+    'react/jsx-boolean-value': [2, 'always'],
+    'react/prop-types': 'off',
+    'react/react-in-jsx-scope': 'off',
     // Next.js use his own internal link system
     'jsx-a11y/anchor-is-valid': [
       'error',
