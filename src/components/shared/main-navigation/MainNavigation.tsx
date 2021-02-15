@@ -1,34 +1,51 @@
 import React from 'react';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import HomeIcon from '@material-ui/icons/Home';
+import DashboardIcon from '@material-ui/icons/Dashboard';
+import InfoIcon from '@material-ui/icons/Info';
+import List from '@material-ui/core/List';
 import Link from 'next/link';
 import { Routes } from '../../../constants/Routes';
-import styles from './MainNavigation.module.css';
-import environment from 'environment';
 
 interface IProps {}
 
 export const MainNavigation: React.FC<IProps> = (props) => {
   return (
-    <nav>
-      <ol className={styles.crumb}>
-        <li>
-          <Link href={Routes.Index}>
-            <a>Home</a>
-          </Link>
-        </li>
-        <li>
-          <Link href={Routes.About}>
-            <a>About</a>
-          </Link>
-        </li>
-        <li>
-          <Link href={Routes.Films}>
-            <a>Film List</a>
-          </Link>
-        </li>
-        <li>
-          <a href={environment.app.users}>Users API</a>
-        </li>
-      </ol>
-    </nav>
+    <List>
+      <Link href={Routes.Index} passHref>
+        <ListItem button component="a">
+          <ListItemIcon>
+            <HomeIcon />
+          </ListItemIcon>
+          <ListItemText primary="Home" />
+        </ListItem>
+      </Link>
+      <Link href={Routes.Dashboard} passHref>
+        <ListItem button component="a">
+          <ListItemIcon>
+            <DashboardIcon />
+          </ListItemIcon>
+          <ListItemText primary="Dashboard" />
+        </ListItem>
+      </Link>
+      <Link href={Routes.Films} passHref>
+        <ListItem button component="a">
+          <ListItemIcon>
+            <InfoIcon />
+          </ListItemIcon>
+          <ListItemText primary="Films" />
+        </ListItem>
+      </Link>
+      <Link href={Routes.About} passHref>
+        <ListItem button component="a">
+          <ListItemIcon>
+            <InfoIcon />
+          </ListItemIcon>
+          <ListItemText primary="About" />
+        </ListItem>
+      </Link>
+    </List>
   );
 };
