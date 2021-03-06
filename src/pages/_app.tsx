@@ -17,4 +17,5 @@ const NextApp: React.FC<AppProps> = (props) => {
   );
 };
 
+// ts-prune-ignore-next
 export default NextApp;

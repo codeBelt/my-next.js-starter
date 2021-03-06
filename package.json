@@ -18,6 +18,7 @@
     "prettier": "npx prettier --write \"./**/*.{ts,tsx,js,jsx,json,md}\"",
     "ts": "tsc --noEmit",
     "ts:watch": "npm run ts -- --watch",
+    "ts:prune": "npx ts-prune",
     "---------- Analyze ----------------------------------------------------": "",
     "analyze": "ANALYZE=true next build",
     "---------- helper commands --------------------------------------------": "",

@@ -4,6 +4,9 @@ interface IResponseData {
   users: any[];
 }
 
+/**
+ * ts-prune-ignore-next
+ */
 export default (req: NextApiRequest, res: NextApiResponse<IResponseData>) => {
   const sampleUserData = [
     { id: '101', name: 'Alice' },

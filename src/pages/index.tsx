@@ -13,4 +13,5 @@ const IndexRoute: NextPage<IProps> = (props) => {
   );
 };
 
+// ts-prune-ignore-next
 export default IndexRoute;

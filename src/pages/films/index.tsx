@@ -17,11 +17,15 @@ const FilmsRoute: NextPage<IProps> = (props) => {
   );
 };
 
-export default FilmsRoute;
-
+/**
+ * ts-prune-ignore-next
+ */
 export const getStaticProps: GetStaticProps = async () => {
   // TODO: how to handle errors
   const films: IFilm[] = await getFilms();
 
   return { props: { films } };
 };
+
+// ts-prune-ignore-next
+export default FilmsRoute;

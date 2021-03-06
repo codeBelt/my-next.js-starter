@@ -18,8 +18,9 @@ const FilmRoute: NextPage<IProps> = (props) => {
   );
 };
 
-export default FilmRoute;
-
+/**
+ * ts-prune-ignore-next
+ */
 export const getStaticPaths: GetStaticPaths = async () => {
   const films = await getFilms();
   const paths = films.map((film) => ({
@@ -29,6 +30,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
+/**
+ * ts-prune-ignore-next
+ */
 export const getStaticProps: GetStaticProps = async (props) => {
   try {
     const film = await getFilm(props.params?.id as string);
@@ -39,5 +43,5 @@ export const getStaticProps: GetStaticProps = async (props) => {
   }
 };
 
-// function Blog({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
-// }
+// ts-prune-ignore-next
+export default FilmRoute;

@@ -25,4 +25,5 @@ class NextDocument extends Document {
   }
 }
 
+// ts-prune-ignore-next
 export default NextDocument;
