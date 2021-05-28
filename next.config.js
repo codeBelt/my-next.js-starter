@@ -13,6 +13,10 @@ module.exports = withPlugins(
     }),
   ],
   {
+    future: {
+      webpack5: true,
+    },
+
     webpack(config) {
       config.resolve.alias = {
         ...config.resolve.alias,
