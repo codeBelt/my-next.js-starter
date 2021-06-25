@@ -13,8 +13,10 @@ module.exports = withPlugins(
     }),
   ],
   {
-    future: {
-      webpack5: true,
+    reactStrictMode: true,
+
+    eslint: {
+      dirs: ['src'],
     },
 
     webpack(config) {
