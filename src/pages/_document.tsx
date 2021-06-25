@@ -8,7 +8,7 @@ class NextDocument extends Document {
     return initialProps;
   }
 
-  render() {
+  render(): JSX.Element {
     return (
       <Html lang="en" dir="ltr">
         <Head>

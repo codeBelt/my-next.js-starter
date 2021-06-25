@@ -1,13 +1,13 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
 interface IResponseData {
-  users: any[];
+  users: unknown[];
 }
 
 /**
  * ts-prune-ignore-next
  */
-export default (req: NextApiRequest, res: NextApiResponse<IResponseData>) => {
+export default (req: NextApiRequest, res: NextApiResponse<IResponseData>): void => {
   const sampleUserData = [
     { id: '101', name: 'Alice' },
     { id: '102', name: 'Bob' },
