@@ -1,0 +1,20 @@
+import { Menu, Flag, FlagNameValues } from 'semantic-ui-react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+
+export const LocalePicker = () => {
+  const router = useRouter();
+
+  return (
+    <Menu.Menu position="right">
+      {router.locales!.map((locale) => (
+        <Link key={locale} href={router.asPath} locale={locale} passHref={true}>
+          <Menu.Item active={locale === router.locale} key={locale}>
+            <Flag name={(locale === 'en' ? 'us' : locale) as FlagNameValues} />
+            {` ${locale.toUpperCase()}`}
+          </Menu.Item>
+        </Link>
+      ))}
+    </Menu.Menu>
+  );
+};

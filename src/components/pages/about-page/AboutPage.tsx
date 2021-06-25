@@ -1,19 +1,16 @@
 import React from 'react';
-import Link from 'next/link';
-import { Routes } from '../../../constants/Routes';
+import { useTranslation } from 'next-i18next';
+import { Header } from 'semantic-ui-react';
 
 interface IProps {}
 
 export const AboutPage: React.FC<IProps> = (props) => {
+  const { t } = useTranslation('common');
+
   return (
-    <div>
-      <h1>About</h1>
-      <p>This is the about page</p>
-      <p>
-        <Link href={Routes.Index}>
-          <a>Go home</a>
-        </Link>
-      </p>
-    </div>
+    <>
+      <Header as="h1">{t('common:about')}</Header>
+      <div>{t('aboutMessage')}</div>
+    </>
   );
 };
