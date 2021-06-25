@@ -7,7 +7,7 @@ import { Routes } from '../../constants/Routes';
 
 export const Header = () => {
   const { pathname } = useRouter();
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
 
   const buttons = [
     { path: Routes.Index, text: 'home', icon: 'home' },
