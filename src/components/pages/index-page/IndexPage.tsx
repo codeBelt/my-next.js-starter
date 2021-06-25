@@ -9,8 +9,8 @@ export const IndexPage: React.FC<IProps> = (props) => {
 
   return (
     <div>
-      <Header as="h1">{t('home')}</Header>
-      <div>{t('welcomeMessage')}</div>
+      <Header as="h1">{t('common:home')}</Header>
+      <div>{t('index:welcomeMessage')}</div>
     </div>
   );
 };

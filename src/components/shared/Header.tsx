@@ -10,8 +10,8 @@ export const Header = () => {
   const { t } = useTranslation();
 
   const buttons = [
-    { path: Routes.Index, text: 'home', icon: 'home' },
-    { path: Routes.About, text: 'about', icon: 'question' },
+    { path: Routes.Index, text: 'common:home', icon: 'home' },
+    { path: Routes.About, text: 'common:about', icon: 'question' },
   ];
 
   return (
