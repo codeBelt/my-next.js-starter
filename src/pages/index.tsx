@@ -2,7 +2,7 @@ import React from 'react';
 import { MainLayout } from '../components/shared/main-layout/MainLayout';
 import { IndexPage } from '../components/pages/index-page/IndexPage';
 import { GetServerSideProps, NextPage } from 'next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { typedServerSideTranslations } from '../utils/i18n.utils';
 
 interface IProps {}
 
@@ -16,7 +16,7 @@ const IndexRoute: NextPage<IProps> = (props) => {
 
 export const getServerSideProps: GetServerSideProps = async (context) => ({
   props: {
-    ...(await serverSideTranslations(context.locale!, ['index', 'common'])),
+    ...(await typedServerSideTranslations(context.locale!, ['index', 'common'])),
   },
 });
 

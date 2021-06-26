@@ -5,7 +5,7 @@ import { Header } from 'semantic-ui-react';
 interface IProps {}
 
 export const AboutPage: React.FC<IProps> = (props) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation(['common', 'about']);
 
   return (
     <>

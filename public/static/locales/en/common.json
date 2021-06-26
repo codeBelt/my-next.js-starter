@@ -1,4 +1,5 @@
 {
   "home": "Welcome",
-  "about": "About us"
+  "about": "About us",
+  "copyright": "copyright {{year}}"
 }

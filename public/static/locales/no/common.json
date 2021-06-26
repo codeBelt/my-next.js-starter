@@ -1,4 +1,5 @@
 {
   "home": "Velkommen",
-  "about": "Om oss"
+  "about": "Om oss",
+  "copyright": "opphavsrett {{year}}"
 }
