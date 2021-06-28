@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import { Routes } from '../../constants/Routes';
 import { SemanticICONS } from 'semantic-ui-react/dist/commonjs/generic';
-import { AppI18nNamespaces, TFunction } from 'react-i18next';
 
 export const Header = () => {
   const { pathname } = useRouter();

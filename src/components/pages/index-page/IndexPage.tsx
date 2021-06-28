@@ -10,7 +10,11 @@ export const IndexPage: React.FC<IProps> = (props) => {
   return (
     <div>
       <Header as="h1">{t('common:home')}</Header>
-      <div>{t('index:welcomeMessage')}</div>
+      <p>{t('index:welcomeMessage')}</p>
+      <p>{t('index:cartItems', { count: 1 })}</p>
+      <p>{t('index:cartItems', { count: 3 })}</p>
+      <p>{t('index:nested.one')}</p>
+      <p>{t('index:nested.two')}</p>
     </div>
   );
 };
