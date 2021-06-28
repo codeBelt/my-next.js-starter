@@ -1,15 +1,15 @@
 import 'react-i18next';
-import common from '../../public/static/locales/en/common.json';
-import index from '../../public/static/locales/en/index.json';
-import about from '../../public/static/locales/en/about.json';
+import CommonText from '../../public/static/locales/en/CommonText.json';
+import IndexPage from '../../public/static/locales/en/IndexPage.json';
+import AboutPage from '../../public/static/locales/en/AboutPage.json';
 
 declare module 'react-i18next' {
   interface CustomTypeOptions {
-    defaultNS: 'common';
+    defaultNS: 'CommonText';
     resources: {
-      common: typeof common;
-      index: typeof index;
-      about: typeof about;
+      CommonText: typeof CommonText;
+      IndexPage: typeof IndexPage;
+      AboutPage: typeof AboutPage;
     };
   }
 

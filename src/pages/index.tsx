@@ -16,7 +16,7 @@ const IndexRoute: NextPage<IProps> = (props) => {
 
 export const getServerSideProps: GetServerSideProps = async (context) => ({
   props: {
-    ...(await typedServerSideTranslations(context.locale!, ['index', 'common'])),
+    ...(await typedServerSideTranslations(context.locale!, ['IndexPage', 'CommonText'])),
   },
 });
 

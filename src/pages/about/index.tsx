@@ -16,7 +16,7 @@ const AboutRoute: NextPage<IProps> = (props) => {
 
 export const getServerSideProps: GetServerSideProps = async (context) => ({
   props: {
-    ...(await typedServerSideTranslations(context.locale!, ['about', 'common'])),
+    ...(await typedServerSideTranslations(context.locale!, ['AboutPage', 'CommonText'])),
   },
 });
 

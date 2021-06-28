@@ -8,11 +8,11 @@ import { SemanticICONS } from 'semantic-ui-react/dist/commonjs/generic';
 
 export const Header = () => {
   const { pathname } = useRouter();
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation(['CommonText']);
 
   const buttons: { path: Routes; text: string; icon: SemanticICONS }[] = [
-    { path: Routes.Index, text: 'common:home', icon: 'home' },
-    { path: Routes.About, text: 'common:about', icon: 'question' },
+    { path: Routes.Index, text: 'CommonText:home', icon: 'home' },
+    { path: Routes.About, text: 'CommonText:about', icon: 'question' },
   ];
 
   return (

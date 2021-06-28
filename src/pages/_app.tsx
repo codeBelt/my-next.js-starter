@@ -10,7 +10,7 @@ import { CurrentDate } from '../components/shared/CurrentDate';
 import { Header } from '../components/shared/Header';
 
 const NextApp: React.FC<AppProps> = (props) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation(['CommonText']);
 
   return (
     <React.Fragment>
@@ -28,7 +28,7 @@ const NextApp: React.FC<AppProps> = (props) => {
         </Segment>
         <footer>
           <hr />
-          <span>{t('common:copyright', { year: 2021 })} </span>
+          <span>{t('CommonText:copyright', { year: 2021 })} </span>
         </footer>
         http://www.lingoes.net/en/translator/langcode.htm
       </Container>
