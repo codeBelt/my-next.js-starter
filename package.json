@@ -29,11 +29,14 @@
   "dependencies": {
     "axios": "0.21.1",
     "clsx": "1.1.1",
+    "i18next": "20.3.2",
+    "i18next-browser-languagedetector": "6.1.2",
+    "i18next-http-backend": "1.2.6",
     "luxon": "1.27.0",
     "next": "11.0.1",
-    "next-i18next": "8.5.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-i18next": "11.11.0",
     "semantic-ui-css": "2.4.1",
     "semantic-ui-react": "2.0.3"
   },
