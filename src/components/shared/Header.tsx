@@ -5,8 +5,11 @@ import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import { Routes } from '../../constants/Routes';
 import { SemanticICONS } from 'semantic-ui-react/dist/commonjs/generic';
+import React from 'react';
 
-export const Header = () => {
+interface IProps {}
+
+export const Header: React.FC<IProps> = (props) => {
   const { pathname } = useRouter();
   const { t } = useTranslation(['CommonText']);
 

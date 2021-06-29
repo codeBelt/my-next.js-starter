@@ -1,8 +1,11 @@
 import { Menu, Flag, FlagNameValues } from 'semantic-ui-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import React from 'react';
 
-export const LocalePicker = () => {
+interface IProps {}
+
+export const LocalePicker: React.FC<IProps> = (props) => {
   const router = useRouter();
 
   return (

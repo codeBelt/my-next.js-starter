@@ -8,6 +8,7 @@ import { appWithTranslation, useTranslation } from 'next-i18next';
 import { Container, Segment } from 'semantic-ui-react';
 import { CurrentDate } from '../components/shared/CurrentDate';
 import { Header } from '../components/shared/Header';
+import { Currency } from '../components/shared/Currency';
 
 const NextApp: React.FC<AppProps> = (props) => {
   const { t } = useTranslation(['CommonText']);
@@ -23,6 +24,7 @@ const NextApp: React.FC<AppProps> = (props) => {
       <Container>
         <Header />
         <CurrentDate />
+        <Currency />
         <Segment>
           <props.Component {...props.pageProps} />
         </Segment>
