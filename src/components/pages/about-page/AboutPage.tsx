@@ -1,11 +1,15 @@
 import React from 'react';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'react-i18next';
 import { Header } from 'semantic-ui-react';
 
 interface IProps {}
 
 export const AboutPage: React.FC<IProps> = (props) => {
-  const { t } = useTranslation(['CommonText', 'AboutPage']);
+  const { t, ready } = useTranslation(['CommonText', 'AboutPage'], { useSuspense: false });
+
+  if (!ready) {
+    return null;
+  }
 
   return (
     <>

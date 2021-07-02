@@ -4,14 +4,27 @@ import '../css/main.css';
 import React from 'react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import { appWithTranslation, useTranslation } from 'next-i18next';
 import { Container, Segment } from 'semantic-ui-react';
 import { CurrentDate } from '../components/shared/CurrentDate';
 import { Header } from '../components/shared/Header';
 
-const NextApp: React.FC<AppProps> = (props) => {
-  const { t } = useTranslation(['CommonText']);
+import i18next from '../i18n';
+import Router from 'next/router';
+import { useTranslation } from 'react-i18next';
 
+Router.events.on('routeChangeStart', (): void => {
+  i18next.changeLanguage(Router.router?.locale);
+});
+
+const NextApp: React.FC<AppProps> = (props) => {
+  const { t, ready } = useTranslation(['CommonText'], { useSuspense: false });
+  //
+
+  if (!ready) {
+    return null;
+  }
+
+  // console.log(`i18n`, i18n);
   return (
     <React.Fragment>
       <Head>
@@ -38,4 +51,4 @@ const NextApp: React.FC<AppProps> = (props) => {
 };
 
 // ts-prune-ignore-next
-export default appWithTranslation(NextApp);
+export default NextApp;
