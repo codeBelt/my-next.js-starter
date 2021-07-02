@@ -2,6 +2,7 @@ const path = require('path');
 const withPlugins = require('next-compose-plugins');
 const withBundleAnalyzer = require('@next/bundle-analyzer');
 const DuplicatePackageCheckerPlugin = require('duplicate-package-checker-webpack-plugin');
+const { i18n } = require('./next-i18next.config');
 
 // https://medium.com/ne-digital/how-to-reduce-next-js-bundle-size-68f7ac70c375
 // https://medium.com/ne-digital/build-frontend-performance-monitor-dashboard-using-pagespeed-insights-e807a2caa6cf
@@ -14,6 +15,8 @@ module.exports = withPlugins(
   ],
   {
     reactStrictMode: true,
+
+    i18n,
 
     eslint: {
       dirs: ['src'],

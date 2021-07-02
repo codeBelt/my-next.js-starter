@@ -1,0 +1,9 @@
+{
+  "welcomeMessage": "Hi, welcome!",
+  "nested": {
+    "one": "One It is",
+    "two": "Two There We Go"
+  },
+  "cartItems": "{{ count }} item in cart",
+  "cartItems_plural": "{{ count }} items in cart"
+}
