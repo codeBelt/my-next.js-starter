@@ -13,4 +13,5 @@ const AboutRoute: NextPage<IProps> = (props) => {
   );
 };
 
+// ts-prune-ignore-next
 export default AboutRoute;

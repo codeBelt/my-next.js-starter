@@ -17,3 +17,5 @@ export const List: React.FC<IProps> = (props) => {
     </ul>
   );
 };
+
+List.displayName = 'List';

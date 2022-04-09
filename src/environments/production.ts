@@ -11,4 +11,5 @@ const productionEnv: Environment = {
   ...env,
 };
 
+// ts-prune-ignore-next
 export default productionEnv;

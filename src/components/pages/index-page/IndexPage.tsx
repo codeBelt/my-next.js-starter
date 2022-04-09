@@ -4,9 +4,13 @@ import { Routes } from '../../../constants/Routes';
 import { UiFileInputButton } from '../../ui/ui-file-input-button/UiFileInputButton';
 import { uploadFileRequest } from '../../../domains/upload/upload.services';
 
-interface IProps {}
+interface IProps {
+  testId?: string;
+}
 
 export const IndexPage: React.FC<IProps> = (props) => {
+  const { testId = IndexPage.displayName } = props;
+
   const onChange = async (formData: FormData) => {
     const response = await uploadFileRequest(formData, (event) => {
       console.log(`Current progress:`, Math.round((event.loaded * 100) / event.total));
@@ -34,9 +38,11 @@ export const IndexPage: React.FC<IProps> = (props) => {
       </div>
       <p>
         <Link href={Routes.About}>
-          <a>About</a>
+          <a data-testid={`${testId}_about-button`}>About</a>
         </Link>
       </p>
     </div>
   );
 };
+
+IndexPage.displayName = 'IndexPage';
