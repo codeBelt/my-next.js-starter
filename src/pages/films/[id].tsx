@@ -13,13 +13,17 @@ interface IProps {
 const FilmRoute: NextPage<IProps> = (props) => {
   return (
     <MainLayout title={`${props.film ? props.film.title : 'Film Detail'} | Next.js + TypeScript Example`}>
-      <FilmPage film={props.film} errors={props.errors} />
+      <FilmPage
+        film={props.film}
+        errors={props.errors}
+      />
     </MainLayout>
   );
 };
 
-export default FilmRoute;
-
+/**
+ * ts-prune-ignore-next
+ */
 export const getStaticPaths: GetStaticPaths = async () => {
   const films = await getFilms();
   const paths = films.map((film) => ({
@@ -29,15 +33,18 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
+/**
+ * ts-prune-ignore-next
+ */
 export const getStaticProps: GetStaticProps = async (props) => {
   try {
     const film = await getFilm(props.params?.id as string);
 
     return { props: { film } };
-  } catch (err) {
+  } catch (err: any) {
     return { props: { errors: err.message } };
   }
 };
 
-// function Blog({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
-// }
+// ts-prune-ignore-next
+export default FilmRoute;

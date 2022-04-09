@@ -18,3 +18,5 @@ export const FilmPage: React.FC<IProps> = (props) => {
 
   return <>{props.film && <ListDetail film={props.film} />}</>;
 };
+
+FilmPage.displayName = 'FilmPage';

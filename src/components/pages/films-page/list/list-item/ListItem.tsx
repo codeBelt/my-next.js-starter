@@ -16,3 +16,5 @@ export const ListItem: React.FC<IProps> = (props) => {
     </Link>
   );
 };
+
+ListItem.displayName = 'ListItem';

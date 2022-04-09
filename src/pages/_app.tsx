@@ -10,11 +10,15 @@ const NextApp: React.FC<AppProps> = (props) => {
       <Head>
         <title>My Next.js Starter</title>
         {/* Use minimum-scale=1 to enable GPU rasterization */}
-        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no" />
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
+        />
       </Head>
       <props.Component {...props.pageProps} />
     </React.Fragment>
   );
 };
 
+// ts-prune-ignore-next
 export default NextApp;

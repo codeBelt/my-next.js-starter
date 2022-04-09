@@ -17,7 +17,8 @@
     "baseUrl": "src",
     "paths": {
       "environments": ["environments"]
-    }
+    },
+    "incremental": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", "./tools"]

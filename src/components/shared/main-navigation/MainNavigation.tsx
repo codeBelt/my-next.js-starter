@@ -32,3 +32,5 @@ export const MainNavigation: React.FC<IProps> = (props) => {
     </nav>
   );
 };
+
+MainNavigation.displayName = 'MainNavigation';

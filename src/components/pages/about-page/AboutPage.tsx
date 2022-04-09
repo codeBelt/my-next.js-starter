@@ -58,3 +58,5 @@ export const AboutPage: React.FC<IProps> = (props) => {
     </div>
   );
 };
+
+AboutPage.displayName = 'AboutPage';

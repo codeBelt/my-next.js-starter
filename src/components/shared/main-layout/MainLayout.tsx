@@ -1,18 +1,24 @@
-import React from 'react';
+import React, { PropsWithChildren, ReactNode } from 'react';
 import Head from 'next/head';
 import { MainNavigation } from '../main-navigation/MainNavigation';
 
 interface IProps {
   title?: string;
+  children: ReactNode;
 }
 
 export const MainLayout: React.FC<IProps> = (props) => {
+  const { title = 'This is the default title' } = props;
+
   return (
     <div>
       <Head>
-        <title>{props.title}</title>
+        <title>{title}</title>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="viewport"
+          content="initial-scale=1.0, width=device-width"
+        />
       </Head>
       <header>
         <MainNavigation />
@@ -26,6 +32,4 @@ export const MainLayout: React.FC<IProps> = (props) => {
   );
 };
 
-MainLayout.defaultProps = {
-  title: 'This is the default title',
-};
+MainLayout.displayName = 'MainLayout';

@@ -13,6 +13,13 @@ module.exports = withPlugins(
     }),
   ],
   {
+    reactStrictMode: true,
+    swcMinify: true,
+
+    eslint: {
+      dirs: ['src'],
+    },
+
     webpack(config) {
       config.externals = [...config.externals, { anychart: 'anychart' }];
 

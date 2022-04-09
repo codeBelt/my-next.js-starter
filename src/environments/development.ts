@@ -7,4 +7,5 @@ const developmentEnv: Environment = {
   // override anything that gets added from base.
 };
 
+// ts-prune-ignore-next
 export default developmentEnv;
