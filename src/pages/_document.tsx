@@ -10,11 +10,20 @@ class NextDocument extends Document {
 
   render(): JSX.Element {
     return (
-      <Html lang="en" dir="ltr">
+      <Html
+        lang="en"
+        dir="ltr"
+      >
         <Head>
           <meta charSet="UTF-8" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
-          <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet" />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+            rel="stylesheet"
+          />
         </Head>
         <body>
           <Main />

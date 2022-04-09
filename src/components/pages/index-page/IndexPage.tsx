@@ -9,7 +9,10 @@ export const IndexPage: React.FC<IProps> = (props) => {
     <div>
       <h1>
         Hello Next.js{' '}
-        <span role="img" aria-label="hand waving">
+        <span
+          role="img"
+          aria-label="hand waving"
+        >
           👋
         </span>
       </h1>
@@ -21,3 +24,5 @@ export const IndexPage: React.FC<IProps> = (props) => {
     </div>
   );
 };
+
+IndexPage.displayName = 'IndexPage';

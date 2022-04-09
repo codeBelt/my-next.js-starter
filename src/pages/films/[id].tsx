@@ -13,7 +13,10 @@ interface IProps {
 const FilmRoute: NextPage<IProps> = (props) => {
   return (
     <MainLayout title={`${props.film ? props.film.title : 'Film Detail'} | Next.js + TypeScript Example`}>
-      <FilmPage film={props.film} errors={props.errors} />
+      <FilmPage
+        film={props.film}
+        errors={props.errors}
+      />
     </MainLayout>
   );
 };
@@ -38,7 +41,7 @@ export const getStaticProps: GetStaticProps = async (props) => {
     const film = await getFilm(props.params?.id as string);
 
     return { props: { film } };
-  } catch (err) {
+  } catch (err: any) {
     return { props: { errors: err.message } };
   }
 };

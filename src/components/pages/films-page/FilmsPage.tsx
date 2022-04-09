@@ -25,3 +25,5 @@ export const FilmPages: React.FC<IProps> = (props) => {
     </div>
   );
 };
+
+FilmPages.displayName = 'FilmPages';
