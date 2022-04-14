@@ -28,7 +28,9 @@
     "clsx": "1.1.1",
     "next": "12.1.4",
     "react": "18.0.0",
-    "react-dom": "18.0.0"
+    "react-dom": "18.0.0",
+    "reflect-metadata": "0.1.13",
+    "tsyringe": "4.6.0"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "12.1.4",
