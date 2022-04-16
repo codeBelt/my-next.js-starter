@@ -21,6 +21,8 @@ module.exports = withPlugins(
     },
 
     webpack(config) {
+      config.externals = [...config.externals, { anychart: 'anychart' }];
+
       config.resolve.alias = {
         ...config.resolve.alias,
         // https://blog.usejournal.com/my-awesome-custom-react-environment-variables-setup-8ebb0797d8ac
