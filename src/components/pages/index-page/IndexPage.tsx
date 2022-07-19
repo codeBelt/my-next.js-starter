@@ -10,31 +10,37 @@ interface IProps {
 }
 const data = [
   {
-    "name": "Hines Fowler",
-    "company": "BUZZNESS",
-    "email": "hinesfowler@buzzness.com",
-    "phone": "+1 (869) 405-3127"
+    name: 'Hines Fowler',
+    company: 'BUZZNESS',
+    email: 'hinesfowler@buzzness.com',
+    phone: '+1 (869) 405-3127',
   },
+  {
+    name: 'Joe Fowler',
+    company: 'Buz',
+    email: 'joefowler@buzzness.com',
+    phone: '+1 (869) 405-3127',
+  },
+];
 
-]
 const columns: GridColumn[] = [
   {
-    title: "Name",
-    id: "name"
+    title: 'Name',
+    id: 'name',
   },
   {
-    title: "Company",
-    id: "company"
+    title: 'Company',
+    id: 'company',
   },
   {
-    title: "Email",
-    id: "email"
+    title: 'Email',
+    id: 'email',
   },
   {
-    title: "Phone",
-    id: "phone"
-  }
-]
+    title: 'Phone',
+    id: 'phone',
+  },
+];
 
 export const IndexPage: React.FC<IProps> = (props) => {
   const { testId = IndexPage.displayName } = props;
@@ -42,8 +48,8 @@ export const IndexPage: React.FC<IProps> = (props) => {
     const [col, row] = cell;
     const dataRow = data[row];
     // dumb but simple way to do this
-    const indexes: string[] = ["name", "company", "email", "phone"];
-    const d = dataRow[indexes[col]]
+    const indexes: string[] = ['name', 'company', 'email', 'phone'];
+    const d = dataRow[indexes[col]];
 
     return {
       kind: GridCellKind.Text,
@@ -71,7 +77,13 @@ export const IndexPage: React.FC<IProps> = (props) => {
       </p>
 
       <main>
-        <UiTableDynamic getCellContent={getContent} columns={columns} rows={data.length} />
+        <UiTableDynamic
+          getCellContent={getContent}
+          columns={columns}
+          rows={data.length}
+          height={'200px'}
+          width={'100%'}
+        />
       </main>
     </div>
   );
