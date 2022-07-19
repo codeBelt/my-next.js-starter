@@ -1,3 +1,4 @@
+import '@glideapps/glide-data-grid/dist/index.css';
 import '../css/main.css';
 
 import React from 'react';
