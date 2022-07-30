@@ -24,7 +24,7 @@
     "-----------------------------------------------------------------------": ""
   },
   "dependencies": {
-    "@glideapps/glide-data-grid": "4.99.0-beta4",
+    "@glideapps/glide-data-grid": "5.0.0-beta1",
     "axios": "0.27.2",
     "clsx": "1.2.1",
     "lodash": "4.17.21",

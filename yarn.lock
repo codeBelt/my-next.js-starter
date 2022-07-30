@@ -495,10 +495,10 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@glideapps/glide-data-grid@4.99.0-beta4":
-  version "4.99.0-beta4"
-  resolved "https://registry.yarnpkg.com/@glideapps/glide-data-grid/-/glide-data-grid-4.99.0-beta4.tgz#f13c2101a998d41abfcc3c6cc07be0daf4a0fd3e"
-  integrity sha512-PUeMg8djAb6g6vvSZLeISgf9LxOt+wwBypXwQHOOtQzSkW3b4YOwLwzmKaStbyD1BRow060Il/eU0ho7gJ85pg==
+"@glideapps/glide-data-grid@5.0.0-beta1":
+  version "5.0.0-beta1"
+  resolved "https://registry.yarnpkg.com/@glideapps/glide-data-grid/-/glide-data-grid-5.0.0-beta1.tgz#5cee7a1dcf0cc1e8a924a06ae29ae97c86002d7e"
+  integrity sha512-3H0GYwCUV/Gxyv/pQylzD2DYbJvGQFINh2ulg3ZUBlPrAIwVV0Ovs/1mT8Wqw7geAtZmQ6TbnTq1FoJPOxinQQ==
   dependencies:
     canvas-hypertxt "^0.0.3"
     react-number-format "^4.4.1"
